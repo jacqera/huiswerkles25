@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Hobbies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    header, footer {
+      background-color: #00008B;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    #add-hobby-btn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    
+    @media screen and (max-width: 600px) {
+      header, footer {
+        font-size: 18px;
+      }
+      
+      ul {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mijn Hobbies</h1>
+  </header>
+
+  <ul id="hobby-list">
+    <li>Lezen</li>
+    <li>Sporten</li>
+    <li>Programmeren</li>
+    <li>Reizen</li>
+  </ul>
+  
+  <button id="add-hobby-btn">Voeg Hobby Toe</button>
+  
+  <footer>
+    &copy; 2023 - Mijn Hobbies
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      $("#add-hobby-btn").click(function() {
+        var hobby = prompt("Voer een nieuwe hobby in:");
+        if (hobby !== null && hobby !== "") {
+          var listItem = "<li>" + hobby + "</li>";
+          $("#hobby-list").append(listItem);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
